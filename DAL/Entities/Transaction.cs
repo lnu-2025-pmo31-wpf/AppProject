@@ -2,7 +2,7 @@
 {
     public enum TransactionType
     {
-        Income,  // дохід
+        Income,  
         Expense  // витрата
     }
 
