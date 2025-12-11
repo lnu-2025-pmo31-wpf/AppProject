@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "f8Vm1/FO39s=",
+  "dgSpecHash": "uZbK6qr3IdQ/TTe9TXbKsOEX2djA6iLQkj72Xt2p3+kKJU+VNXqBb/pc9WhXlWBNwuEu/EKA+x9bfU+cUzIhZQ==",
   "success": true,
-  "projectFilePath": "/Users/ihor/Desktop/Finance Manager/FinanceManagerConsole/FinanceManagerConsole.csproj",
-  "expectedPackageFiles": [
-    "/Users/ihor/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
-    "/Users/ihor/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.0/microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
-    "/Users/ihor/.nuget/packages/npgsql/10.0.0/npgsql.10.0.0.nupkg.sha512",
-    "/Users/ihor/.nuget/packages/system.diagnostics.diagnosticsource/9.0.11/system.diagnostics.diagnosticsource.9.0.11.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\Vlad\\Source\\Repos\\lnu-2025-pmo31-wpf\\AppProject\\Finance Manager\\FinanceManagerConsole\\FinanceManagerConsole.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

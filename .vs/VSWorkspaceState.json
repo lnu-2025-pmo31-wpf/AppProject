@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Finance Manager",
+    "\\Finance Manager\\FinanceManagerConsole"
   ],
+  "SelectedNode": "\\MyFinance.sln",
   "PreviewInSolutionExplorer": false
 }
