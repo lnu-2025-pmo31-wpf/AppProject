@@ -1,0 +1,5 @@
+/Users/ihor/Desktop/Finance Manager/FinanceManagerConsole/obj/Debug/net7.0/FinanceManagerConsole.csproj.AssemblyReference.cache
+/Users/ihor/Desktop/Finance Manager/FinanceManagerConsole/obj/Debug/net7.0/FinanceManagerConsole.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ihor/Desktop/Finance Manager/FinanceManagerConsole/obj/Debug/net7.0/FinanceManagerConsole.AssemblyInfoInputs.cache
+/Users/ihor/Desktop/Finance Manager/FinanceManagerConsole/obj/Debug/net7.0/FinanceManagerConsole.AssemblyInfo.cs
+/Users/ihor/Desktop/Finance Manager/FinanceManagerConsole/obj/Debug/net7.0/FinanceManagerConsole.csproj.CoreCompileInputs.cache
