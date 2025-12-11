@@ -2,6 +2,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj" />
+    <ProjectReference Include="..\DAL\DAL.csproj" />
+    <ProjectReference Include="..\Finance Manager\FinanceManagerConsole\FinanceManagerConsole.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
