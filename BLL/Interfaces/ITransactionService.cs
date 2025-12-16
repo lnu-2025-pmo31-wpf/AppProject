@@ -1,15 +1,11 @@
-﻿using FinanceManager.DAL.Entities;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using DAL.Entities;
 
-namespace FinanceManager.BLL.Interfaces
+namespace BLL.Interfaces
 {
     public interface ITransactionService
     {
-        Task<List<Transaction>> GetAllTransactionsAsync();
-        Task<Transaction> GetTransactionByIdAsync(int id);
-        Task AddTransactionAsync(Transaction transaction);
-        Task UpdateTransactionAsync(Transaction transaction);
-        Task DeleteTransactionAsync(int id);
+        IEnumerable<Transaction> GetAll();
+        void Add(Transaction transaction);
+        void Delete(int id);
     }
 }

@@ -1,0 +1,12 @@
+﻿<Window x:Class="Presentation.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Main"
+        Height="300"
+        Width="400">
+    <StackPanel Margin="20">
+        <Button Content="Categories"/>
+        <Button Content="Settings"/>
+        <Button Content="Statistics"/>
+    </StackPanel>
+</Window>

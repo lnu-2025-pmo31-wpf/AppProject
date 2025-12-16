@@ -7,10 +7,10 @@ conn.Open();
 Console.WriteLine("Connected to PostgreSQL!");
 
 
-// Генерація тестових даних
+//Генерація тестових даних
 // InsertTestData(conn);
 
-// Виведення таблиць
+//Виведення таблиць
 PrintUsers(conn);
 PrintCategories(conn);
 PrintTransactions(conn);

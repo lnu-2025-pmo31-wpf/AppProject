@@ -1,54 +1,40 @@
-﻿using FinanceManager.DAL;
-using FinanceManager.DAL.Entities;
-using FinanceManager.BLL.Interfaces;
+﻿using DAL;
+using DAL.Entities;
+using BLL.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
-namespace FinanceManager.BLL.Services
+namespace BLL.Services
 {
     public class TransactionService : ITransactionService
     {
-        private readonly FinanceDbContext _context;
+        private readonly AppDbContext _context;
 
-        public TransactionService(FinanceDbContext context)
+        public TransactionService(AppDbContext context)
         {
             _context = context;
         }
 
-        public async Task<List<Transaction>> GetAllTransactionsAsync()
+        public IEnumerable<Transaction> GetAll()
         {
-            return await _context.Transactions.ToListAsync();
+            return _context.Transactions
+                .Include(t => t.Category)
+                .Include(t => t.User)
+                .ToList();
         }
 
-        public async Task<Transaction> GetTransactionByIdAsync(int id)
+        public void Add(Transaction transaction)
         {
-            return await _context.Transactions.FindAsync(id);
-        }
-
-        public async Task AddTransactionAsync(Transaction transaction)
-        {
-            // Базова валідація
-            if (transaction.Amount <= 0)
-                throw new System.ArgumentException("Сума транзакції має бути більше нуля.");
-
             _context.Transactions.Add(transaction);
-            await _context.SaveChangesAsync();
+            _context.SaveChanges();
         }
 
-        public async Task UpdateTransactionAsync(Transaction transaction)
+        public void Delete(int id)
         {
-            _context.Transactions.Update(transaction);
-            await _context.SaveChangesAsync();
-        }
-
-        public async Task DeleteTransactionAsync(int id)
-        {
-            var transaction = await _context.Transactions.FindAsync(id);
-            if (transaction != null)
+            var t = _context.Transactions.Find(id);
+            if (t != null)
             {
-                _context.Transactions.Remove(transaction);
-                await _context.SaveChangesAsync();
+                _context.Transactions.Remove(t);
+                _context.SaveChanges();
             }
         }
     }

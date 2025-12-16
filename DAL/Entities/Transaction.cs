@@ -1,17 +1,17 @@
-﻿namespace FinanceManager.DAL.Entities
+﻿namespace DAL.Entities
 {
-    public enum TransactionType
-    {
-        Income,  
-        Expense  // витрата
-    }
-
     public class Transaction
     {
-        public int Id { get; set; }                // унікальний ідентифікатор
-        public string Description { get; set; }    // опис транзакції
-        public decimal Amount { get; set; }        // сума
-        public TransactionType Type { get; set; }  // тип транзакції
-        public DateTime Date { get; set; }         // дата транзакції
+        public int Id { get; set; }
+
+        public int UserId { get; set; }
+        public User User { get; set; }
+
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
+
+        public decimal Amount { get; set; }
+        public string Type { get; set; }
+        public DateTime Date { get; set; }
     }
 }
