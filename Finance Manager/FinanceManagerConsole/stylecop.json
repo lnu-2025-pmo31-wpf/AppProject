@@ -1,0 +1,9 @@
+{
+  "settings": {
+    "documentationRules": {
+      "companyName": "FinanceManager",
+      "copyrightText": "Copyright (c) FinanceManager. All rights reserved.",
+      "documentInternalElements": false
+    }
+  }
+}

@@ -1,0 +1,72 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/Program.cs(57,13): warning CS8321: The local function 'InsertTestData' is declared but never used [/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/FinanceManagerConsole.csproj]
+/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/Program.cs(1,1): warning SA1633: The file header is missing or not located at the top of the file. (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1633.md) [/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/FinanceManagerConsole.csproj]
+/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/Program.cs(8,1): warning SA1507: Code should not contain multiple blank lines in a row (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1507.md) [/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/FinanceManagerConsole.csproj]
+/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/Program.cs(17,1): warning SA1507: Code should not contain multiple blank lines in a row (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1507.md) [/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/FinanceManagerConsole.csproj]
+CSC : warning SA1516: Elements should be separated by blank line (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1516.md) [/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/FinanceManagerConsole.csproj]
+/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/Program.cs(1,1): warning SA1200: Using directive should appear within a namespace declaration (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1200.md) [/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/FinanceManagerConsole.csproj]
+/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/Program.cs(19,1): warning SA1512: Single-line comments should not be followed by blank line (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1512.md) [/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/FinanceManagerConsole.csproj]
+/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/Program.cs(10,1): warning SA1005: Single line comment should begin with a space. (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1005.md) [/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/FinanceManagerConsole.csproj]
+/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/Program.cs(13,1): warning SA1005: Single line comment should begin with a space. (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1005.md) [/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/FinanceManagerConsole.csproj]
+/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/Program.cs(30,9): warning SA1503: Braces should not be omitted (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1503.md) [/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/FinanceManagerConsole.csproj]
+/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/Program.cs(42,9): warning SA1503: Braces should not be omitted (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1503.md) [/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/FinanceManagerConsole.csproj]
+/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/Program.cs(54,9): warning SA1503: Braces should not be omitted (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1503.md) [/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/FinanceManagerConsole.csproj]
+CSC : warning SA0001: XML comment analysis is disabled due to project configuration (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA0001.md) [/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/FinanceManagerConsole.csproj]
+  FinanceManagerConsole -> /Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/bin/Debug/net8.0/FinanceManagerConsole.dll
+
+Build succeeded.
+
+/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/Program.cs(57,13): warning CS8321: The local function 'InsertTestData' is declared but never used [/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/FinanceManagerConsole.csproj]
+/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/Program.cs(1,1): warning SA1633: The file header is missing or not located at the top of the file. (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1633.md) [/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/FinanceManagerConsole.csproj]
+/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/Program.cs(8,1): warning SA1507: Code should not contain multiple blank lines in a row (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1507.md) [/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/FinanceManagerConsole.csproj]
+/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/Program.cs(17,1): warning SA1507: Code should not contain multiple blank lines in a row (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1507.md) [/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/FinanceManagerConsole.csproj]
+CSC : warning SA1516: Elements should be separated by blank line (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1516.md) [/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/FinanceManagerConsole.csproj]
+/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/Program.cs(1,1): warning SA1200: Using directive should appear within a namespace declaration (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1200.md) [/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/FinanceManagerConsole.csproj]
+/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/Program.cs(19,1): warning SA1512: Single-line comments should not be followed by blank line (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1512.md) [/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/FinanceManagerConsole.csproj]
+/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/Program.cs(10,1): warning SA1005: Single line comment should begin with a space. (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1005.md) [/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/FinanceManagerConsole.csproj]
+/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/Program.cs(13,1): warning SA1005: Single line comment should begin with a space. (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1005.md) [/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/FinanceManagerConsole.csproj]
+/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/Program.cs(30,9): warning SA1503: Braces should not be omitted (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1503.md) [/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/FinanceManagerConsole.csproj]
+/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/Program.cs(42,9): warning SA1503: Braces should not be omitted (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1503.md) [/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/FinanceManagerConsole.csproj]
+/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/Program.cs(54,9): warning SA1503: Braces should not be omitted (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1503.md) [/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/FinanceManagerConsole.csproj]
+CSC : warning SA0001: XML comment analysis is disabled due to project configuration (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA0001.md) [/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/FinanceManagerConsole.csproj]
+    13 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.76
+
+
+(base) ihor@c435d97e68e6 FinanceManagerConsole % dotnet build
+
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/Program.cs(1,4): warning SA1641: The file header company name should match the company name from the settings. (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1641.md) [/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/FinanceManagerConsole.csproj]
+/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/Program.cs(1,4): warning SA1636: The file header copyright text should match the copyright text from the settings. (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1636.md) [/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/FinanceManagerConsole.csproj]
+/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/Program.cs(36,9): warning SA1512: Single-line comments should not be followed by blank line (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1512.md) [/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/FinanceManagerConsole.csproj]
+CSC : warning SA0001: XML comment analysis is disabled due to project configuration (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA0001.md) [/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/FinanceManagerConsole.csproj]
+  FinanceManagerConsole -> /Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/bin/Debug/net8.0/FinanceManagerConsole.dll
+
+Build succeeded.
+
+/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/Program.cs(1,4): warning SA1641: The file header company name should match the company name from the settings. (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1641.md) [/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/FinanceManagerConsole.csproj]
+/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/Program.cs(1,4): warning SA1636: The file header copyright text should match the copyright text from the settings. (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1636.md) [/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/FinanceManagerConsole.csproj]
+/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/Program.cs(36,9): warning SA1512: Single-line comments should not be followed by blank line (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1512.md) [/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/FinanceManagerConsole.csproj]
+CSC : warning SA0001: XML comment analysis is disabled due to project configuration (https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA0001.md) [/Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/FinanceManagerConsole.csproj]
+    4 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.76
+
+ Determining projects to restore...
+  All projects are up-to-date for restore.
+  FinanceManagerConsole -> /Users/ihor/Desktop/Work/AppProject/Finance Manager/FinanceManagerConsole/bin/Debug/net8.0/FinanceManagerConsole.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+Після первинного аналізу StyleCop було виявлено 13 попереджень.
+У процесі виправлення додано file header відповідно до налаштувань stylecop.json,
+усунено порушення форматування коментарів та увімкнено XML-документацію.
+
+Після повторного аналізу проєкт збирається без попереджень і відповідає
+правилам StyleCop та принципам Clean Code.

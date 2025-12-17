@@ -1,12 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Windows.Input;
+using Presentation.Commands;
 
 namespace Presentation.ViewModels
 {
-    internal class MainViewModel
+    public class MainViewModel : BaseViewModel
     {
+        public ICommand OpenTransactionsCommand { get; }
+
+        public MainViewModel()
+        {
+            OpenTransactionsCommand = new RelayCommand(_ => OpenTransactions());
+        }
+
+        private void OpenTransactions()
+        {
+            // Навігаційний use case
+            // UI → ViewModel → відкриття функціонального вікна
+        }
     }
 }

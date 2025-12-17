@@ -14,29 +14,51 @@ namespace Presentation.ViewModels
         public ObservableCollection<Transaction> Transactions { get; }
         public ObservableCollection<Category> Categories { get; }
 
-        public decimal Amount { get; set; }
-        public Category SelectedCategory { get; set; }
+        private decimal _amount;
+        public decimal Amount
+        {
+            get => _amount;
+            set
+            {
+                _amount = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private Category _selectedCategory;
+        public Category SelectedCategory
+        {
+            get => _selectedCategory;
+            set
+            {
+                _selectedCategory = value;
+                OnPropertyChanged();
+            }
+        }
 
         public ICommand AddCommand { get; }
         public ICommand DeleteCommand { get; }
 
         public TransactionsViewModel(
             ITransactionService service,
-            ICategoryService categoryService) // якщо нема — скажи
+            ICategoryService categoryService)
         {
             _service = service;
 
             Transactions = new ObservableCollection<Transaction>(_service.GetAll());
             Categories = new ObservableCollection<Category>(categoryService.GetAll());
 
-            AddCommand = new RelayCommand(_ => Add());
+            AddCommand = new RelayCommand(_ => Add(), _ => CanAdd());
             DeleteCommand = new RelayCommand(obj => Delete(obj));
+        }
+
+        private bool CanAdd()
+        {
+            return Amount > 0 && SelectedCategory != null;
         }
 
         private void Add()
         {
-            if (SelectedCategory == null) return;
-
             var transaction = new Transaction
             {
                 Amount = Amount,
@@ -46,14 +68,17 @@ namespace Presentation.ViewModels
 
             _service.Add(transaction);
             Transactions.Add(transaction);
+
+            Amount = 0;
+            SelectedCategory = null;
         }
 
         private void Delete(object obj)
         {
-            if (obj is Transaction t)
+            if (obj is Transaction transaction)
             {
-                _service.Delete(t.Id);
-                Transactions.Remove(t);
+                _service.Delete(transaction.Id);
+                Transactions.Remove(transaction);
             }
         }
     }
