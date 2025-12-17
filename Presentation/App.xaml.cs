@@ -1,27 +1,9 @@
-﻿using BLL.Interfaces;
-using BLL.Services;
-using DAL;
-using Microsoft.Extensions.DependencyInjection;
-using Presentation.ViewModels;
-using Presentation.Views;
-using System.Windows;
+﻿using System.Windows;
 
-public partial class App : Application
+namespace Presentation
 {
-    public static IServiceProvider Services { get; private set; }
-
-    protected override void OnStartup(StartupEventArgs e)
+    public partial class App : Application
     {
-        var services = new ServiceCollection();
-
-        services.AddDbContext<AppDbContext>();
-        services.AddScoped<ITransactionService, TransactionService>();
-
-        services.AddTransient<TransactionsViewModel>();
-        services.AddTransient<TransactionsWindow>();
-
-        Services = services.BuildServiceProvider();
-
-        Services.GetRequiredService<TransactionsWindow>().Show();
+        
     }
 }

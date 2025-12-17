@@ -1,18 +1,20 @@
-﻿using Microsoft.EntityFrameworkCore;
-using DAL.Entities;
+﻿using DAL.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace DAL
 {
     public class AppDbContext : DbContext
     {
-        public DbSet<User> Users { get; set; }
+        public DbSet<User> Users { get; set; }  
+
+        
         public DbSet<Category> Categories { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            optionsBuilder.UseNpgsql(
-                "Host=localhost;Port=5432;Username=postgres;Password=1111;Database=Money Manager");
+            options.UseNpgsql(
+                "Host=localhost;Port=5432;Database=money_manager;Username=postgres;Password=1234");
         }
     }
 }

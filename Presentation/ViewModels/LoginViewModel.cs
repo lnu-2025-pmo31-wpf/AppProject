@@ -1,44 +1,47 @@
-﻿using System.Windows.Input;
+﻿using BLL.Services;
+using DAL.Repositories;
 using Presentation.Commands;
+using System.Windows;
+using System.Windows.Input;
 
 namespace Presentation.ViewModels
 {
-    public class LoginViewModel : BaseViewModel
+    public class LoginViewModel
     {
-        private string _username;
-        private string _password;
+        private readonly UserService _service = new();
 
-        public string Username
-        {
-            get => _username;
-            set
-            {
-                _username = value;
-                OnPropertyChanged();
-            }
-        }
+        public string Username { get; set; }
+        public string Password { get; set; }
 
-        public string Password
-        {
-            get => _password;
-            set
-            {
-                _password = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public ICommand LoginCommand { get; }
-
-        public LoginViewModel()
-        {
-            LoginCommand = new RelayCommand(_ => Login());
-        }
+        public ICommand LoginCommand => new RelayCommand(_ => Login());
 
         private void Login()
         {
-            // Заглушка для use case
-            // Дані введені користувачем → оброблені ViewModel
+            var username = (Username ?? "").Trim();
+            var password = Password ?? "";
+
+            if (_service.Login(username, password))
+            {
+                // беремо user з БД, щоб дістати Id
+                var repo = new UserRepository();
+                var user = repo.GetByUsername(username);
+
+                if (user == null)
+                {
+                    MessageBox.Show("User not found");
+                    return;
+                }
+
+                AppSession.CurrentUserId = user.Id;
+                AppSession.CurrentUsername = user.Username;
+
+                new MainWindow().Show();
+                Application.Current.Windows[0]?.Close();
+            }
+            else
+            {
+                MessageBox.Show("Wrong username or password");
+            }
         }
     }
 }
