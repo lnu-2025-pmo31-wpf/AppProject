@@ -17,6 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Repositories\Commands\" />
+    <ProjectReference Include="..\Common.Logging\Common.Logging.csproj" />
   </ItemGroup>
 </Project>

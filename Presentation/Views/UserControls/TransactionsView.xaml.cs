@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Animation;
 
 namespace Presentation.Views.UserControls
 {
@@ -20,9 +21,15 @@ namespace Presentation.Views.UserControls
         {
             InitializeComponent();
 
-            TypeBox.SelectedIndex = 0; // Expense
+            TypeBox.SelectedIndex = 0;
             LoadCategories();
             LoadTransactions();
+        }
+
+        private void ShowToast(string text)
+        {
+            ToastText.Text = text;
+            ((Storyboard)FindResource("ToastAnim")).Begin();
         }
 
         private void LoadCategories()
@@ -31,7 +38,8 @@ namespace Presentation.Views.UserControls
             {
                 _categories = _catRepo.GetAll();
                 CategoryBox.ItemsSource = _categories;
-                if (_categories.Count > 0) CategoryBox.SelectedIndex = 0;
+                if (_categories.Count > 0)
+                    CategoryBox.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
@@ -62,31 +70,32 @@ namespace Presentation.Views.UserControls
                     return;
                 }
 
-                if (!decimal.TryParse(AmountBox.Text.Replace(',', '.'), NumberStyles.Any, CultureInfo.InvariantCulture, out var amount))
+                if (!decimal.TryParse(
+                        AmountBox.Text.Replace(',', '.'),
+                        NumberStyles.Any,
+                        CultureInfo.InvariantCulture,
+                        out var amount))
                 {
                     MessageBox.Show("Amount must be a number");
                     return;
                 }
 
-                var isExpense = (TypeBox.SelectedItem as ComboBoxItem)?.Content?.ToString() == "Expense";
-                if (isExpense) amount = Math.Abs(amount);
-                else amount = Math.Abs(amount); // можна тримати тільки позитивні, тип визначатимеш категорією
-
                 var tx = new Transaction
                 {
                     UserId = AppSession.CurrentUserId,
                     CategoryId = cat.Id,
-                    Amount = amount,
+                    Amount = Math.Abs(amount),
                     Date = DateTime.Now,
                     Note = NoteBox.Text?.Trim() ?? ""
                 };
 
                 tx.Id = _txRepo.Add(tx);
 
-                // refresh
                 AmountBox.Text = "";
                 NoteBox.Text = "";
                 LoadTransactions();
+
+                ShowToast("Transaction saved ✅");
             }
             catch (Exception ex)
             {
@@ -106,6 +115,8 @@ namespace Presentation.Views.UserControls
 
                 _txRepo.Delete(tx.Id);
                 LoadTransactions();
+
+                ShowToast("Transaction deleted 🗑️");
             }
             catch (Exception ex)
             {

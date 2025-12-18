@@ -2,6 +2,7 @@
 using Npgsql;
 using System;
 using System.Collections.Generic;
+using Common.Logging;
 
 namespace DAL.Repositories
 {
@@ -10,91 +11,116 @@ namespace DAL.Repositories
         private const string ConnStr =
             "Host=localhost;Port=5432;Database=money_manager;Username=postgres;Password=1111";
 
-        // =======================
-        // GET
-        // =======================
         public List<Transaction> GetAllByUser(int userId)
         {
+            Log.Info($"DB GetAllByUser userId={userId}");
             var list = new List<Transaction>();
 
-            using var conn = new NpgsqlConnection(ConnStr);
-            conn.Open();
-
-            using var cmd = new NpgsqlCommand(@"
-                SELECT id, user_id, category_id, amount, date, note
-                FROM transactions
-                WHERE user_id=@u
-                ORDER BY date DESC, id DESC", conn);
-
-            cmd.Parameters.AddWithValue("u", userId);
-
-            using var r = cmd.ExecuteReader();
-            while (r.Read())
+            try
             {
-                list.Add(new Transaction
+                using var conn = new NpgsqlConnection(ConnStr);
+                conn.Open();
+
+                using var cmd = new NpgsqlCommand(
+                    "SELECT id, user_id, category_id, amount, date, note FROM transactions WHERE user_id=@u",
+                    conn);
+
+                cmd.Parameters.AddWithValue("u", userId);
+
+                using var r = cmd.ExecuteReader();
+                while (r.Read())
                 {
-                    Id = r.GetInt32(0),
-                    UserId = r.GetInt32(1),
-                    CategoryId = r.GetInt32(2),
-                    Amount = r.GetDecimal(3),
-                    Date = r.GetDateTime(4),
-                    Note = r.IsDBNull(5) ? "" : r.GetString(5)
-                });
+                    list.Add(new Transaction
+                    {
+                        Id = r.GetInt32(0),
+                        UserId = r.GetInt32(1),
+                        CategoryId = r.GetInt32(2),
+                        Amount = r.GetDecimal(3),
+                        Date = r.GetDateTime(4),
+                        Note = r.IsDBNull(5) ? "" : r.GetString(5)
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error("DB error GetAllByUser", ex);
+                throw;
             }
 
             return list;
         }
 
-        // =======================
-        // ADD  ✅ (ПОВЕРНУЛИ)
-        // =======================
         public int Add(Transaction t)
         {
-            using var conn = new NpgsqlConnection(ConnStr);
-            conn.Open();
+            Log.Info($"DB Add transaction amount={t.Amount}");
 
-            using var cmd = new NpgsqlCommand(@"
-                INSERT INTO transactions(user_id, category_id, amount, date, note)
-                VALUES (@u, @c, @a, @d, @n)
-                RETURNING id", conn);
+            try
+            {
+                using var conn = new NpgsqlConnection(ConnStr);
+                conn.Open();
 
-            cmd.Parameters.AddWithValue("u", t.UserId);
-            cmd.Parameters.AddWithValue("c", t.CategoryId);
-            cmd.Parameters.AddWithValue("a", t.Amount);
-            cmd.Parameters.AddWithValue("d", t.Date);
-            cmd.Parameters.AddWithValue("n", (object?)t.Note ?? DBNull.Value);
+                using var cmd = new NpgsqlCommand(
+                    "INSERT INTO transactions(user_id, category_id, amount, date, note) VALUES (@u,@c,@a,@d,@n) RETURNING id",
+                    conn);
 
-            return (int)cmd.ExecuteScalar()!;
+                cmd.Parameters.AddWithValue("u", t.UserId);
+                cmd.Parameters.AddWithValue("c", t.CategoryId);
+                cmd.Parameters.AddWithValue("a", t.Amount);
+                cmd.Parameters.AddWithValue("d", t.Date);
+                cmd.Parameters.AddWithValue("n", (object?)t.Note ?? DBNull.Value);
+
+                return (int)cmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                Log.Error("DB error Add transaction", ex);
+                throw;
+            }
         }
 
-        // =======================
-        // DELETE ONE  ✅ (ПОВЕРНУЛИ)
-        // =======================
         public void Delete(int id)
         {
-            using var conn = new NpgsqlConnection(ConnStr);
-            conn.Open();
+            Log.Warn($"DB Delete transaction id={id}");
 
-            using var cmd = new NpgsqlCommand(
-                "DELETE FROM transactions WHERE id=@id", conn);
+            try
+            {
+                using var conn = new NpgsqlConnection(ConnStr);
+                conn.Open();
 
-            cmd.Parameters.AddWithValue("id", id);
-            cmd.ExecuteNonQuery();
+                using var cmd = new NpgsqlCommand(
+                    "DELETE FROM transactions WHERE id=@id", conn);
+
+                cmd.Parameters.AddWithValue("id", id);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Log.Error("DB error Delete transaction", ex);
+                throw;
+            }
         }
 
-        // =======================
-        // DELETE ALL (Settings)
-        // =======================
+        
         public void DeleteAllByUser(int userId)
         {
-            using var conn = new NpgsqlConnection(ConnStr);
-            conn.Open();
+            Log.Warn($"DB Delete ALL transactions userId={userId}");
 
-            using var cmd = new NpgsqlCommand(
-                "DELETE FROM transactions WHERE user_id=@u", conn);
+            try
+            {
+                using var conn = new NpgsqlConnection(ConnStr);
+                conn.Open();
 
-            cmd.Parameters.AddWithValue("u", userId);
-            cmd.ExecuteNonQuery();
+                using var cmd = new NpgsqlCommand(
+                    "DELETE FROM transactions WHERE user_id=@u", conn);
+
+                cmd.Parameters.AddWithValue("u", userId);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Log.Error("DB error DeleteAllByUser", ex);
+                throw;
+            }
         }
     }
 }
